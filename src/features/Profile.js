@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { UserInfoShow } from "./auth";
 
 const Profile = () => {
@@ -9,7 +9,9 @@ const Profile = () => {
         <UserInfoShow />
         <Outlet />
       </div>
-      <div className="ten wide column">User Courses</div>
+      <div className="ten wide column">
+        <Link to="/own-courses/create">Create New Course</Link>
+      </div>
     </div>
   );
 };

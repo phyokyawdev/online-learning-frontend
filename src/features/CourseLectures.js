@@ -36,7 +36,7 @@ const CourseLectures = () => {
       if (isCourseCreated && isLecturesCreated) {
         dispatch(flushCurrentCourse());
         dispatch(flushCurrentLectures());
-        navigate("/own-courses");
+        navigate("/profile");
       }
     }
   }, [isCourseSubmitting, isCourseCreated, isLecturesCreated]);
@@ -61,7 +61,7 @@ const CourseLectures = () => {
         onClick={() => {
           dispatch(flushCurrentCourse());
           dispatch(flushCurrentLectures());
-          navigate("/own-courses");
+          navigate("/profile");
         }}
         type="button"
         className="ui right floated button"

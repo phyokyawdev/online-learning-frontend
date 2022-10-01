@@ -6,7 +6,7 @@ import {
   Outlet,
 } from "react-router-dom";
 import { UserInfoEdit } from "../features/auth";
-import { CourseLectures, Header, OwnCourses, Profile } from "../features";
+import { CourseLectures, Header, Students, Profile } from "../features";
 
 const Layout = () => {
   return (
@@ -26,11 +26,13 @@ export const router = createBrowserRouter(
     <Route path="/" element={<Layout />}>
       <Route index element={<Home />} />
       <Route path="own-courses" element={<Outlet />}>
-        <Route index element={<OwnCourses />} />
         <Route path="create" element={<CourseLectures />} />
       </Route>
       <Route path="profile" element={<Profile />}>
         <Route path="edit" element={<UserInfoEdit />} />
+      </Route>
+      <Route path="students" element={<Outlet />}>
+        <Route index element={<Students />} />
       </Route>
     </Route>
   )

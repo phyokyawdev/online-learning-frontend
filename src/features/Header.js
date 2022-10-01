@@ -19,8 +19,8 @@ const Header = () => {
             {_isLoggedIn && (
               <>
                 {_isTeacher && (
-                  <Link to="/own-courses" className="item">
-                    Own Courses
+                  <Link to="/students" className="item">
+                    Students
                   </Link>
                 )}
                 <Link to="/profile" className="item">
