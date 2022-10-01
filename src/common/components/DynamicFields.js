@@ -11,6 +11,7 @@ import React from "react";
  * rest of props will be passed to Formik FieldArray
  */
 const DynamicFields = ({
+  children,
   renderArrayItem,
   renderArrayAction,
   label,
@@ -34,6 +35,7 @@ const DynamicFields = ({
           </div>
         )}
       </FieldArray>
+      {children}
     </div>
   );
 };
