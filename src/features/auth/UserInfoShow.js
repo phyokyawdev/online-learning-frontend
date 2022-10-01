@@ -37,8 +37,8 @@ const UserInfoShow = () => {
         {email}
       </a>
       {socials &&
-        socials.map((social) => (
-          <a>
+        socials.map((social, index) => (
+          <a key={index}>
             <i className="at icon"></i>
             {social}
           </a>

@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { selectCurrentUser, signIn, signOut } from "./authSlice";
 
 const GoogleAuth = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const current_user = useSelector(selectCurrentUser);
 
@@ -27,6 +29,9 @@ const GoogleAuth = () => {
 
   const onSignOutClick = () => {
     dispatch(signOut());
+
+    // delete cookie
+    navigate("/");
   };
 
   if (!client) return;

@@ -14,7 +14,7 @@ const current_user = {
 };
 
 const initialState = {
-  current_user: current_user,
+  current_user: null,
 };
 
 export const signIn = createAsyncThunk("auth/signIn", async (auth_code) => {
@@ -78,6 +78,6 @@ export const { setUser } = authSlice.actions;
 // selector outside createSlice (use state.auth to access)
 export const selectCurrentUser = (state) => state.auth.current_user;
 export const isLoggedIn = (state) => !!state.auth.current_user;
-export const isTeacher = (state) => state.auth.current_user.role === "teacher";
+export const isTeacher = (state) => state.auth.current_user?.role === "teacher";
 
 export default authSlice.reducer;
