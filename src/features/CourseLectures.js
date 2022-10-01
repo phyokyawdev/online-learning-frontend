@@ -2,7 +2,6 @@ import React, { useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Course } from "./courses";
 import { Lectures } from "./lectures";
-import CourseLecturesLayout from "./CourseLecturesLayout";
 import { useDispatch, useSelector } from "react-redux";
 import {
   flushCurrentLectures,
@@ -75,11 +74,15 @@ const CourseLectures = () => {
   const formTwo = <Lectures refId={lecturesRef} />;
 
   return (
-    <CourseLecturesLayout
-      formOne={formOne}
-      formTwo={formTwo}
-      actions={actions}
-    />
+    <div className="ui form">
+      <div className="ui stackable two column relaxed centered grid">
+        <div className="six wide column">{formOne}</div>
+        <div className="ten wide column">
+          {formTwo}
+          {actions}
+        </div>
+      </div>
+    </div>
   );
 };
 
