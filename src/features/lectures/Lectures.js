@@ -38,7 +38,7 @@ const Lectures = ({ refId }) => {
           if (elt.id) acc.push(elt);
           return acc;
         };
-        const initials = initialValues.reduce(pickCreated, []);
+        const initials = initialValues.lectures.reduce(pickCreated, []);
         const finalIds = modifiedLectures
           .reduce(pickCreated, [])
           .map((item) => item.id);
@@ -47,7 +47,6 @@ const Lectures = ({ refId }) => {
             (item) => !finalIds.includes(item.id)
           );
 
-          console.log(deleteds);
           dispatch(deleteLectures(deleteds));
         }
 

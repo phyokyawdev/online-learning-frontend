@@ -47,7 +47,6 @@ const createCourseImageUrl = async (image) => {
 export const uploadCourse = createAsyncThunk(
   "courses/uploadCourse",
   async (values, { rejectWithValue, getState, dispatch }) => {
-    console.log(values);
     let { id, cover_photo_link, title, content, tags } = values;
 
     tags = await Promise.all(

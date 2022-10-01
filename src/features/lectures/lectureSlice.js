@@ -72,7 +72,6 @@ export const uploadLectures = createAsyncThunk(
     });
 
     if (errorItems.length > 0) {
-      console.log(lectures);
       return rejectWithValue(lectures);
     }
 
